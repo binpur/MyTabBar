@@ -15,6 +15,8 @@ import android.widget.TextView;
 import com.app.ada.mytabbar.data.Fruits;
 import com.app.ada.mytabbar.data.Vegetables;
 
+import java.util.List;
+
 /**
  * A fragment representing a list of Items.
  * <p/>
@@ -27,14 +29,11 @@ import com.app.ada.mytabbar.data.Vegetables;
 public class ItemFragment extends Fragment implements AbsListView.OnItemClickListener {
 
     private final String TAG = ItemFragment.class.getCanonicalName();
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_SECTION_NUMBER = "section_number";
-
-    // TODO: Rename and change types of parameters
     private int sectionNumber;
 
     private OnFragmentInteractionListener mListener;
+    private List<MyListItem> mSelectedList;
 
     /**
      * The fragment's ListView/GridView.
@@ -71,15 +70,9 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
             sectionNumber = getArguments().getInt(ARG_SECTION_NUMBER);
         }
 
-        Log.i(TAG, "sectionNumber="+sectionNumber);
-        // TODO: Change Adapter to display your content
-/*        mAdapter = new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
-                android.R.layout.simple_list_item_1, android.R.id.text1, DummyContent.ITEMS);*/
+        mSelectedList= sectionNumber==0?Fruits.ITEMS:Vegetables.ITEMS;
+        mAdapter = new MyListAdapter(getActivity(), mSelectedList);
 
-        if(sectionNumber==0)
-        mAdapter = new MyListAdapter(getActivity(), Fruits.ITEMS);
-        if(sectionNumber==1)
-            mAdapter = new MyListAdapter(getActivity(), Vegetables.ITEMS);
     }
 
     @Override
@@ -120,9 +113,17 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
         if (null != mListener) {
             // Notify the active callbacks interface (the activity, if the
             // fragment is attached to one) that an item has been selected.
-           // mListener.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
+           mListener.onFragmentInteraction( mSelectedList.get(position) );
+           mListener.onFragmentInteraction( mSelectedList,position );
+           mListener.onFragmentInteraction( view);
+            mListener.onFragmentInteraction( parent,  view,  position,  id);
+
         }
     }
+
+
+
+
 
     /**
      * The default content for this Fragment has a TextView that is shown when
@@ -149,7 +150,11 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        public void onFragmentInteraction(String id);
+        public void onFragmentInteraction(MyListItem item);
+        public void onFragmentInteraction(List<MyListItem> list, int position);
+        public void onFragmentInteraction(View view);
+        public void onFragmentInteraction(AdapterView<?> parent, View view, int position, long id);
+
     }
 
 }

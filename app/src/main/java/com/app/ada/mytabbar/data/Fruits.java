@@ -15,6 +15,7 @@ public class Fruits {
     static {
         // Add 3 sample items.
         ITEMS.add(new MyListItem("apple", R.drawable.apple));
+        ITEMS.add(new MyListItem("apple", R.drawable.apple));
 
     }
 

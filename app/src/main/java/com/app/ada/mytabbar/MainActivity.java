@@ -1,5 +1,6 @@
 package com.app.ada.mytabbar;
 
+import java.util.List;
 import java.util.Locale;
 
 import com.app.ada.mytabbar.R;
@@ -11,6 +12,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 
 
@@ -22,7 +24,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity implements ItemFragment.OnFragmentInteractionListener {
 
@@ -169,7 +173,26 @@ public class MainActivity extends Activity implements ItemFragment.OnFragmentInt
 
 
     @Override
-    public void onFragmentInteraction(String id) {
+    public void onFragmentInteraction(MyListItem item) {
+        Toast.makeText(this, item.getName() + " Clicked!"
+                , Toast.LENGTH_SHORT).show();
+    }
+
+
+    @Override
+    public void onFragmentInteraction(List<MyListItem> list, int position) {
+
+    }
+
+    public void onFragmentInteraction(View view){
+
+    }
+
+    public void onFragmentInteraction(AdapterView<?> parent, View view, int position, long id){
+
+    }
+
+    private void clickEffect(MyListItem item){
 
     }
 }
