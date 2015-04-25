@@ -9,6 +9,7 @@ public class MyListItem {
 
     private String name;
     private int iconResId;
+    private String description;
 
     public MyListItem(String name, int iconResId) {
         this.name = name;
@@ -31,5 +32,9 @@ public class MyListItem {
 
     public void setIconResId(int iconResId) {
         this.iconResId = iconResId;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

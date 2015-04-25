@@ -32,6 +32,7 @@ public class MainActivity extends Activity implements ItemFragment.OnFragmentInt
 
     private String TAG = MainActivity.class.getCanonicalName();
     private TabBarView tabBarView;
+    private Context context = this;
 
 
     SectionsPagerAdapter mSectionsPagerAdapter;
@@ -176,6 +177,10 @@ public class MainActivity extends Activity implements ItemFragment.OnFragmentInt
     public void onFragmentInteraction(MyListItem item) {
         Toast.makeText(this, item.getName() + " Clicked!"
                 , Toast.LENGTH_SHORT).show();
+
+
+        CustomDialog dialog = new CustomDialog(context,item);
+        dialog.show();
     }
 
 
