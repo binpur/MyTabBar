@@ -1,0 +1,15 @@
+
+
+[
+{ "name" : "Apple",
+  "text" : "This is an apple",
+  "iconResId" : "apple"
+},
+
+{ "name" : "Carrot",
+  "text" : "This is an Carrot",
+  "iconResId" : "carrot"
+}
+
+
+]

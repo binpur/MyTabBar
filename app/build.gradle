@@ -23,4 +23,5 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':tBV')
     compile 'com.android.support:support-v13:22.1.1'
+    compile files('libs/gson-2.2.4.jar')
 }

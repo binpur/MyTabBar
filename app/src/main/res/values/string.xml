@@ -3,4 +3,26 @@
     <string name="title_section1">Vegetables</string>
     <string name="title_section2">Fruits</string>
     <string name="title_section3">CCC</string>
+
+    <!-- Fruit -->
+    <string-array name="fruit_name">
+        <item>Apple</item>
+        <item>Pear</item>
+        <item>Peach</item>
+    </string-array>
+
+    <string-array name="fruit_icon_id">
+        <item>@drawable/apple</item>
+        <item>@drawable/apple</item>
+        <item>@drawable/apple</item>
+    </string-array>
+
+    <string-array name="fruit_text">
+        <item>Apple lalal </item>
+        <item>Pear aaaa</item>
+        <item>Peach bbb</item>
+    </string-array>
+
+    <!-- Vegetables -->
+
 </resources>

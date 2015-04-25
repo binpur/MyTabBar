@@ -8,15 +8,15 @@ import android.content.res.Resources;
 public class MyListItem {
 
     private String name;
-    private int iconResId;
-    private String description;
+    private String text;
+    private String iconResId;
 
-    public MyListItem(String name, int iconResId) {
+
+    public MyListItem(String name, String text, String iconResId) {
         this.name = name;
+        this.text = text;
         this.iconResId = iconResId;
     }
-
-
 
     public String getName() {
         return name;
@@ -26,15 +26,19 @@ public class MyListItem {
         this.name = name;
     }
 
-    public int getIconResId() {
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getIconResId() {
         return iconResId;
     }
 
-    public void setIconResId(int iconResId) {
+    public void setIconResId(String iconResId) {
         this.iconResId = iconResId;
-    }
-
-    public String getDescription() {
-        return description;
     }
 }

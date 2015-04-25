@@ -18,12 +18,14 @@ import java.util.List;
 public class MyListAdapter extends ArrayAdapter {
     private Context context;
     private boolean useList = true;
+    private String packageName;
     private String TAG = MyListAdapter.class.getCanonicalName();
 
     public MyListAdapter(Context context, List items) {
         //TODO:simple_list_item_1???
         super(context, android.R.layout.simple_list_item_1, items);
         this.context = context;
+        this.packageName = context.getPackageName();
     }
 
     /*
@@ -61,7 +63,8 @@ public class MyListAdapter extends ArrayAdapter {
         }
 
         holder.name.setText(myListItem.getName());
-        holder.icon.setImageResource(myListItem.getIconResId());
+        int iconId = context.getResources().getIdentifier(myListItem.getIconResId(),"drawable",packageName);
+        holder.icon.setImageResource(iconId);
         return viewToUse;
 
     }

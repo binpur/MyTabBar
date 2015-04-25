@@ -12,7 +12,7 @@ import java.util.List;
 public class Vegetables {
     public static List<MyListItem> ITEMS = new ArrayList<MyListItem>();
     static {
-        ITEMS.add(new MyListItem("carrot", R.drawable.carrot));
+        //ITEMS.add(new MyListItem("carrot", R.drawable.carrot));
 
     }
 

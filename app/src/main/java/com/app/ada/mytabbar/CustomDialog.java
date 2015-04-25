@@ -53,7 +53,7 @@ public class CustomDialog extends Dialog {
 
     private void setContent(){
         tvTitle.setText(item.getName());
-        tvDescription.setText(item.getDescription());
+        tvDescription.setText(item.getText());
     }
 
 

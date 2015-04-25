@@ -70,7 +70,7 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
             sectionNumber = getArguments().getInt(ARG_SECTION_NUMBER);
         }
 
-        mSelectedList= sectionNumber==0?Fruits.ITEMS:Vegetables.ITEMS;
+        mSelectedList= sectionNumber==0?(new Fruits(getActivity())).getITEMS():Vegetables.ITEMS;
         mAdapter = new MyListAdapter(getActivity(), mSelectedList);
 
     }
