@@ -17,8 +17,6 @@ import java.util.List;
  */
 public class Data {
     private final String TAG = Data.class.getCanonicalName();
-    private List<MyListItem> fruitList;
-    private List<MyListItem> vegetableList;
     private final String[] fileName = new String[]{"fruit.json","vegetable.json"};
     private List resultArray;
 

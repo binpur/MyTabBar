@@ -44,7 +44,7 @@ public class MyListAdapter extends ArrayAdapter {
         View viewToUse = null;
         // This block exists to inflate the settings list item conditionally based on whether
         // we want to support a grid or list view.
-        //TODO: ????
+
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         if(convertView == null){
             if(useList){
