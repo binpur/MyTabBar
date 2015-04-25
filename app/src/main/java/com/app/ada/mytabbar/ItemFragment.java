@@ -9,15 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
-
-import com.app.ada.mytabbar.dummy.DummyContent;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.app.ada.mytabbar.data.Fruits;
+import com.app.ada.mytabbar.data.Vegetables;
 
 /**
  * A fragment representing a list of Items.
@@ -79,10 +75,11 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
         // TODO: Change Adapter to display your content
 /*        mAdapter = new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
                 android.R.layout.simple_list_item_1, android.R.id.text1, DummyContent.ITEMS);*/
-        List list = new ArrayList<MyListItem>();
-        list.add(new MyListItem(new String("apple"),R.drawable.apple));
-        list.add(new MyListItem(new String("pear"),R.drawable.apple));
-        mAdapter = new MyListAdapter(getActivity(),list);
+
+        if(sectionNumber==0)
+        mAdapter = new MyListAdapter(getActivity(), Fruits.ITEMS);
+        if(sectionNumber==1)
+            mAdapter = new MyListAdapter(getActivity(), Vegetables.ITEMS);
     }
 
     @Override
@@ -123,7 +120,7 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
         if (null != mListener) {
             // Notify the active callbacks interface (the activity, if the
             // fragment is attached to one) that an item has been selected.
-            mListener.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
+           // mListener.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
         }
     }
 

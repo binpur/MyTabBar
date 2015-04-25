@@ -1,5 +1,7 @@
 package com.app.ada.mytabbar;
 
+import android.content.res.Resources;
+
 /**
  * Created by Administrator on 2015/4/25.
  */
@@ -12,6 +14,8 @@ public class MyListItem {
         this.name = name;
         this.iconResId = iconResId;
     }
+
+
 
     public String getName() {
         return name;
