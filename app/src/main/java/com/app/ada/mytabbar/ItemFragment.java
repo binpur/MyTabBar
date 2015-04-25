@@ -3,7 +3,6 @@ package com.app.ada.mytabbar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +10,6 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
-
-import com.app.ada.mytabbar.data.Fruits;
-import com.app.ada.mytabbar.data.Vegetables;
 
 import java.util.List;
 
@@ -70,7 +66,8 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
             sectionNumber = getArguments().getInt(ARG_SECTION_NUMBER);
         }
 
-        mSelectedList= sectionNumber==0?(new Fruits(getActivity())).getITEMS():Vegetables.ITEMS;
+        Data data = new Data(getActivity());
+        mSelectedList= data.getListByIndex(sectionNumber);
         mAdapter = new MyListAdapter(getActivity(), mSelectedList);
 
     }
