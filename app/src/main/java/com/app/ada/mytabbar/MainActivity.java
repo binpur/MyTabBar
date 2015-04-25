@@ -16,6 +16,7 @@ import android.os.Bundle;
 
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,7 +26,9 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity implements ItemFragment.OnFragmentInteractionListener {
 
+    private String TAG = MainActivity.class.getCanonicalName();
     private TabBarView tabBarView;
+
 
     SectionsPagerAdapter mSectionsPagerAdapter;
 
@@ -38,6 +41,7 @@ public class MainActivity extends Activity implements ItemFragment.OnFragmentInt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.i(TAG,"onCreate");
 
         LayoutInflater inflator =
                 (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -98,7 +102,7 @@ public class MainActivity extends Activity implements ItemFragment.OnFragmentInt
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class
             // below).
-            return ItemFragment.newInstance("ada","ge");
+            return ItemFragment.newInstance(position);
             //return PlaceholderFragment.newInstance(position + 1);
         }
 
