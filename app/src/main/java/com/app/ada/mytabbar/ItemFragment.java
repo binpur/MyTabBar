@@ -110,10 +110,7 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
         if (null != mListener) {
             // Notify the active callbacks interface (the activity, if the
             // fragment is attached to one) that an item has been selected.
-           mListener.onFragmentInteraction( mSelectedList.get(position) );
-           mListener.onFragmentInteraction( mSelectedList,position );
-           mListener.onFragmentInteraction( view);
-            mListener.onFragmentInteraction( parent,  view,  position,  id);
+           mListener.onFragmentInteraction( mSelectedList.get(position));
 
         }
     }
@@ -148,9 +145,7 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(MyListItem item);
-        public void onFragmentInteraction(List<MyListItem> list, int position);
-        public void onFragmentInteraction(View view);
-        public void onFragmentInteraction(AdapterView<?> parent, View view, int position, long id);
+
 
     }
 

@@ -4,15 +4,20 @@
     android:layout_height="match_parent"
     android:background="@drawable/list_item_bg">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/icon" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="20sp"
+        android:layout_gravity="center"
         android:id="@+id/name" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/icon" />
+
 
 </LinearLayout>

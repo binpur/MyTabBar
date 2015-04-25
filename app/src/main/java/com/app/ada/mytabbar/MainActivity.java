@@ -28,6 +28,8 @@ import android.widget.AdapterView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends Activity implements ItemFragment.OnFragmentInteractionListener {
 
     private String TAG = MainActivity.class.getCanonicalName();
@@ -135,69 +137,15 @@ public class MainActivity extends Activity implements ItemFragment.OnFragmentInt
         }
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-   /* public static class PlaceholderFragment extends Fragment {
-        *//**
-         * The fragment argument representing the section number for this
-         * fragment.
-         *//*
-        private static final String ARG_SECTION_NUMBER = "section_number";
 
-        *//**
-         * Returns a new instance of this fragment for the given section number.
-         *//*
-        public static PlaceholderFragment newInstance(int sectionNumber) {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container,
-                    false);
-            TextView textView = (TextView) rootView
-                    .findViewById(R.id.section_label);
-            textView.setText(Integer.toString(getArguments().getInt(
-                    ARG_SECTION_NUMBER)));
-            return rootView;
-        }
-    }*/
 
 
     @Override
     public void onFragmentInteraction(MyListItem item) {
-        Toast.makeText(this, item.getName() + " Clicked!"
-                , Toast.LENGTH_SHORT).show();
-
 
         CustomDialog dialog = new CustomDialog(context,item);
         dialog.show();
     }
 
 
-    @Override
-    public void onFragmentInteraction(List<MyListItem> list, int position) {
-
-    }
-
-    public void onFragmentInteraction(View view){
-
-    }
-
-    public void onFragmentInteraction(AdapterView<?> parent, View view, int position, long id){
-
-    }
-
-    private void clickEffect(MyListItem item){
-
-    }
 }

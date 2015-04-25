@@ -28,7 +28,7 @@ public class CustomDialog extends Dialog {
          */
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setCanceledOnTouchOutside(false);
-        //getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
 
         /*

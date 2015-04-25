@@ -6,9 +6,42 @@
   "iconResId" : "apple"
 },
 
-{ "name" : "Carrot",
-  "text" : "This is an Carrot",
-  "iconResId" : "carrot"
+{ "name" : "Cherry",
+  "text" : "gdsssss",
+  "iconResId" : "cherry"
+},
+
+{ "name" : "Kiwi",
+  "text" : "fdssgr",
+  "iconResId" : "kiwi"
+},
+{ "name" : "Lemon",
+  "text" : "fgsdgr",
+  "iconResId" : "lemon"
+},
+{ "name" : "Mango",
+  "text" : "jyrut",
+  "iconResId" : "mango"
+},
+{ "name" : "Pear",
+  "text" : "utitio",
+  "iconResId" : "pear"
+},
+{ "name" : "Pineapple",
+  "text" : "qreq",
+  "iconResId" : "pineapple"
+},
+{ "name" : "Pomegranate",
+  "text" : "rwggfgf",
+  "iconResId" : "pomegranate"
+},
+{ "name" : "Strawberry",
+  "text" : "vvcv",
+  "iconResId" : "strawberry"
+},
+{ "name" : "Watermelon",
+  "text" : "jgjgjkgkj",
+  "iconResId" : "watermelon"
 }
 
 
