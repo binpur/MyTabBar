@@ -16,6 +16,9 @@ import android.widget.TextView;
 
 import com.app.ada.mytabbar.dummy.DummyContent;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A fragment representing a list of Items.
  * <p/>
@@ -74,8 +77,12 @@ public class ItemFragment extends Fragment implements AbsListView.OnItemClickLis
 
         Log.i(TAG, "sectionNumber="+sectionNumber);
         // TODO: Change Adapter to display your content
-        mAdapter = new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
-                android.R.layout.simple_list_item_1, android.R.id.text1, DummyContent.ITEMS);
+/*        mAdapter = new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
+                android.R.layout.simple_list_item_1, android.R.id.text1, DummyContent.ITEMS);*/
+        List list = new ArrayList<MyListItem>();
+        list.add(new MyListItem(new String("apple"),R.drawable.apple));
+        list.add(new MyListItem(new String("pear"),R.drawable.apple));
+        mAdapter = new MyListAdapter(getActivity(),list);
     }
 
     @Override
