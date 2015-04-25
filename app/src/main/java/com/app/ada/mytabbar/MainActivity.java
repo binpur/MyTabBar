@@ -23,7 +23,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements ItemFragment.OnFragmentInteractionListener {
 
     private TabBarView tabBarView;
 
@@ -85,8 +85,7 @@ public class MainActivity extends Activity {
     public class SectionsPagerAdapter extends FragmentPagerAdapter implements IconTabProvider{
 
         private int[] tab_icons={R.drawable.ic_tab1,
-                R.drawable.ic_tab2,
-                R.drawable.ic_tab3,
+                R.drawable.ic_tab2
         };
 
 
@@ -99,7 +98,8 @@ public class MainActivity extends Activity {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class
             // below).
-            return PlaceholderFragment.newInstance(position + 1);
+            return ItemFragment.newInstance("ada","ge");
+            //return PlaceholderFragment.newInstance(position + 1);
         }
 
         @Override
@@ -121,8 +121,6 @@ public class MainActivity extends Activity {
                     return getString(R.string.title_section1).toUpperCase(l);
                 case 1:
                     return getString(R.string.title_section2).toUpperCase(l);
-                case 2:
-                    return getString(R.string.title_section3).toUpperCase(l);
             }
             return null;
         }
@@ -131,16 +129,16 @@ public class MainActivity extends Activity {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
-        /**
+   /* public static class PlaceholderFragment extends Fragment {
+        *//**
          * The fragment argument representing the section number for this
          * fragment.
-         */
+         *//*
         private static final String ARG_SECTION_NUMBER = "section_number";
 
-        /**
+        *//**
          * Returns a new instance of this fragment for the given section number.
-         */
+         *//*
         public static PlaceholderFragment newInstance(int sectionNumber) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
@@ -163,6 +161,11 @@ public class MainActivity extends Activity {
                     ARG_SECTION_NUMBER)));
             return rootView;
         }
-    }
+    }*/
 
+
+    @Override
+    public void onFragmentInteraction(String id) {
+
+    }
 }
